@@ -1,6 +1,6 @@
 <mujocoinclude>
   <option integrator="RK4" solver="Newton" />
-  <compiler angle="radian" meshdir="../meshes/" texturedir="../meshes/"/>
+  <compiler angle="radian" meshdir="../../meshes/" texturedir="../meshes/"/>
   
   <!-- 材质定义 -->
   <asset>
@@ -12,15 +12,15 @@
     
     <!-- 网格定义 -->
     <!-- 网格定义 - 使用正确的路径和比例 -->
-    <mesh name="base_link" file="xbot_arm/base_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="arm_1_link" file="xbot_arm/arm_1_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="arm_2_link" file="xbot_arm/arm_2_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="arm_3_link" file="xbot_arm/arm_3_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="arm_4_link" file="xbot_arm/arm_4_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="arm_5_link" file="xbot_arm/arm_5_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="arm_6_link" file="xbot_arm/arm_6_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="gripper_1_link" file="xbot_arm/gripper_1_link.STL" scale="1.0 1.0 1.0"/>
-    <mesh name="gripper_2_link" file="xbot_arm/gripper_2_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="base_link" file="../../meshes/xbot_arm/base_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="arm_1_link" file="../../meshes/xbot_arm/arm_1_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="arm_2_link" file="../../meshes/xbot_arm/arm_2_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="arm_3_link" file="../../meshes/xbot_arm/arm_3_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="arm_4_link" file="../../meshes/xbot_arm/arm_4_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="arm_5_link" file="../../meshes/xbot_arm/arm_5_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="arm_6_link" file="../../meshes/xbot_arm/arm_6_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="gripper_1_link" file="../../meshes/xbot_arm/gripper_1_link.STL" scale="1.0 1.0 1.0"/>
+    <mesh name="gripper_2_link" file="../../meshes/xbot_arm/gripper_2_link.STL" scale="1.0 1.0 1.0"/>
   </asset>
   
   <!-- 接触排除配置，避免自碰撞问题 -->
