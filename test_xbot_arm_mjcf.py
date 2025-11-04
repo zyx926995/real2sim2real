@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
     # 定义默认的MJCF文件路径
     if mjcf_path is None:
-        mjcf_path = os.path.join(os.path.dirname(__file__), "DISCOVERSE", "models", "mjcf", "xbot_arm", "xbot_arm_floor.xml")
+        mjcf_path = os.path.join(os.path.dirname(__file__), "DISCOVERSE", "models", "mjcf", "xbot_arm", "xbot_arm_full.xml")
     
     # 检查MJCF文件是否存在
     if not os.path.exists(mjcf_path):

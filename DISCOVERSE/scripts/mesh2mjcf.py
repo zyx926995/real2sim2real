@@ -630,4 +630,4 @@ if __name__ == "__main__":
         os.system(cmd_line)
         
         # print(f"删除临时预览文件: {tmp_world_mjcf}")
-        # os.remove(tmp_world_mjcf)
+        # os.remove(tmp_world_)
