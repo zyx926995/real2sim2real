@@ -1,4 +1,10 @@
 <mujocoinclude>
+ 
+  <!-- 求解器选项 -->
+  <!-- <option integrator="RK4" solver="Newton" /> 增加迭代次数提高精度 -->
+  <option timestep="0.002" integrator="RK4" solver="Newton" iterations="50" tolerance="1e-8" gravity="0 0 -9.81"/>
+  <compiler angle="radian" meshdir="../meshes/" texturedir="../meshes/"/>
+
   <!-- 材质定义 -->
   <asset>
     <material name="LightGrey" rgba="0.7 0.7 0.7 1" specular="0.3" shininess="0.1" />
@@ -14,9 +20,8 @@
   <option gravity="0 0 -9.81" /> <!-- 重力设置 -->
   <!-- <option collision="all" /> 碰撞检测设置 -->
   
-  <!-- 求解器选项 -->
-  <option iterations="50" tolerance="1e-10" /> <!-- 增加迭代次数提高精度 -->
-  
+
+
   <!-- 默认参数 -->
   <default>
     <!-- 默认几何参数 -->
@@ -26,7 +31,7 @@
     
     <!-- 默认关节参数 -->
     <default class="joint">
-      <joint armature="0.01" damping="1.0" frictionloss="0.01" limited="true" />
+      <joint armature="0.01" damping="0.1" frictionloss="0.01" limited="true" />
     </default>
     
     <!-- 默认碰撞参数 -->

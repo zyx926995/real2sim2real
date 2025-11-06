@@ -1,16 +1,16 @@
 <mujocoinclude>
   <!-- 网格资源定义 -->
   <asset>
-    <mesh file="../../meshes/xbot_arm/base_link.STL" name="base_link_mesh" />
-    <mesh file="../../meshes/xbot_arm/arm_1_link.STL" name="arm_1_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_2_link.STL" name="arm_2_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_3_link.STL" name="arm_3_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_4_link.STL" name="arm_4_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_5_link.STL" name="arm_5_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_6_link.STL" name="arm_6_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/gripper_1_link.STL" name="gripper_1_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/gripper_2_link.STL" name="gripper_2_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/gripper_centor_link.STL" name="gripper_centor_mesh"/>
+    <mesh file="../../meshes/xbot_arm/base_link.obj" name="base_link_mesh" />
+    <mesh file="../../meshes/xbot_arm/arm_1_link.obj" name="arm_1_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/arm_2_link.obj" name="arm_2_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/arm_3_link.obj" name="arm_3_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/arm_4_link.obj" name="arm_4_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/arm_5_link.obj" name="arm_5_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/arm_6_link.obj" name="arm_6_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/gripper_1_link.obj" name="gripper_1_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/gripper_2_link.obj" name="gripper_2_link_mesh"/>
+    <mesh file="../../meshes/xbot_arm/gripper_center_link.obj" name="gripper_centor_mesh"/>
   </asset>
   
 </mujocoinclude>

@@ -1,0 +1,74 @@
+<mujoco model="place_block">
+
+  <!-- ================== 基础设置 ================== -->
+  <include file="../scene.xml"/>
+  <include file="../xbot_arm/xbot_arm_options.xml"/>
+  <include file="../xbot_arm/xbot_arm_dependencies.xml"/>
+
+  <compiler meshdir="../../meshes/" texturedir="../../meshes/"/>
+
+  <!-- ================== 对象依赖 ================== -->
+  <include file="../object/table_cloth_dependencies.xml"/>
+  <include file="../object/bowl_dependencies.xml"/>
+
+  <!-- ================== 场景主体 ================== -->
+  <worldbody>
+
+    <!-- ======= 机械臂主体 ======= -->
+    <!-- 注意：这里不再使用 joint type="fixed"，改用 weld 约束 -->
+    <body name="arm_pose" pos="0.3 0.92 0.71" euler="0 0 3.1416">
+      <include file="../xbot_arm/xbot_arm.xml"/>
+    </body>
+
+    <!-- ======= 摄像机 ======= -->
+    <camera name="eye_side" fovy="72.02" pos="-0.324 0.697 1.02"
+             xyaxes="0.828 -0.561 0.   0.394 0.582 0.702"/>
+
+    <!-- ======= block ======= -->
+    <body name="block_green" pos="0 0.85 0.7145">
+      <joint type="free" frictionloss="0.00001"/>
+      <inertial pos="0 0 0" mass="0.001"
+                diaginertia="1e-7 1e-7 1e-7" />
+      <geom rgba="0.21 0.36 0.21 1" condim="4"
+            solimp="2 1 0.01" solref="0.01 1"
+            friction="1 0.005 0.0001"
+            pos="0 0 0"
+            size="0.0145 0.0145 0.0145" type="box"/>
+    </body>
+
+    <!-- ======= bowl ======= -->
+    <body name="bowl_pink" pos="0 1.03 0.6988">
+      <joint type="free" frictionloss="0.00001"/>
+      <include file="../object/bowl_pink.xml"/>
+    </body>
+
+    <!-- ======= 柜子 ======= -->
+    <body name="cabinet" pos="0.915 0.58 0.01">
+      <include file="../object/cabinet.xml"/>
+    </body>
+
+    <!-- ======= 桌面及其他场景 ======= -->
+    <include file="../lab3_env.xml"/>
+
+  </worldbody>
+
+  <!-- ================== weld约束 + 夹爪约束 ================== -->
+  <equality>
+    <!-- 将 base_link 焊接到世界坐标 -->
+    <weld body1="base_link" body2="world" active="true"/>
+
+    <!-- 保持夹爪同步约束 -->
+    <joint joint1="gripper_1_joint" joint2="gripper_2_joint" polycoef="0 -1 0 0 0"/>
+  </equality>
+
+  <!-- ================== 控制器 ================== -->
+  <actuator>
+    <include file="../xbot_arm/xbot_arm_control.xml"/>
+  </actuator>
+
+  <!-- ================== 传感器 ================== -->
+  <sensor>
+    <include file="../xbot_arm/xbot_arm_sensor.xml"/>
+  </sensor>
+
+</mujoco>

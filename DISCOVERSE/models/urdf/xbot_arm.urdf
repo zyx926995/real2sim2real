@@ -10,6 +10,13 @@
     <child link = "base_link" />
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
   </joint -->
+
+  <default>
+  <joint damping="0.05" armature="0.01"/>
+  <geom solref="0.005 1" solimp="0.9 0.95 0.001"/>
+  </default>
+  <option integrator="RK4" timestep="0.002"/>
+
   <link name="base_link">
     <inertial>
       <origin rpy="0 0 0" xyz="-0.00594343164731706 -0.00101779633653512 0.070063016301284"/>
