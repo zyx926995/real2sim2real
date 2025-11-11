@@ -18,7 +18,7 @@
 
       <!-- hinge = revolute; axis 0 0 1; limits from URDF -->
       <joint name="arm_1_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-             range="-2.094 2.094" damping="0.2" frictionloss="1.0"/>
+             range="-2.094 2.094" damping="2" frictionloss="1.0"/>
 
       <!-- arm_2_link -->
       <body name="arm_2_link" pos="0 0 -0.095" quat="0.70710678 -0.70710678 0 0">
@@ -28,7 +28,7 @@
         <geom type="mesh" mesh="arm_2_link_mesh" pos="0 0 0" group="4" material="LightGreen" class="obj_visual"/>
         <geom type="mesh" mesh="arm_2_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
         <joint name="arm_2_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-               range="-2.094 1.57079632679" damping="0.2" frictionloss="1.0"/>
+               range="-1.57 1.57" damping="2" frictionloss="1.0"/>
 
         <!-- arm_3_link -->
         <body name="arm_3_link" pos="-0.018 0.145 0" quat="0.70710678 0.70710678 0 0">
@@ -38,7 +38,7 @@
           <geom type="mesh" mesh="arm_3_link_mesh" pos="0 0 0" group="4" material="LightGrey" class="obj_visual"/>
           <geom type="mesh" mesh="arm_3_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
           <joint name="arm_3_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-                 range="-2.793 2.793" damping="0.2" frictionloss="1.0"/>
+                 range="-2.793 2.793" damping="2" frictionloss="1.0"/>
 
           <!-- arm_4_link -->
           <body name="arm_4_link" pos="0 0 -0.105" quat="0.70710678 -0.70710678 0 0">
@@ -48,7 +48,7 @@
             <geom type="mesh" mesh="arm_4_link_mesh" pos="0 0 0" group="4" material="LightGrey" class="obj_visual"/>
             <geom type="mesh" mesh="arm_4_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
             <joint name="arm_4_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-                   range="-1.92 1.92" damping="0.1" frictionloss="1.0"/>
+                   range="-1.92 1.92" damping="1" frictionloss="1.0"/>
 
             <!-- arm_5_link -->
             <body name="arm_5_link" pos="0 0.105 0" quat="0.70710678 0.70710678 0 0">
@@ -58,7 +58,7 @@
               <geom type="mesh" mesh="arm_5_link_mesh" pos="0 0 0" group="4" material="LightGreen" class="obj_visual"/>
               <geom type="mesh" mesh="arm_5_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
               <joint name="arm_5_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-                     range="-2.793 2.793" damping="0.1" frictionloss="1.0"/>
+                     range="-2.793 2.793" damping="1" frictionloss="1.0"/>
 
               <!-- arm_6_link -->
               <body name="arm_6_link" pos="0 -0.0002 -0.075" quat="0.70710678 -0.70710678 0 0">
@@ -68,7 +68,7 @@
                 <geom type="mesh" mesh="arm_6_link_mesh" pos="0 0 0" group="4" material="LightGrey" class="obj_visual"/>
                 <geom type="mesh" mesh="arm_6_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
                 <joint name="arm_6_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-                       range="-1.57 1.57" damping="0.1" frictionloss="1.0"/>
+                       range="-1.57 1.57" damping="1" frictionloss="1.0"/>
                 <!-- 相机定义 -->
                   <body pos="-0.1 0 -0.1" euler="3.1416 0 1.5708">
                     <camera name="eye" euler="-0.5236 0 0" fovy="72.5376526571421"/>
@@ -85,7 +85,7 @@
                   <geom type="mesh" mesh="gripper_1_link_mesh" pos="0 0 0" group="4" material="White" class="obj_visual"/>
                   <geom type="mesh" mesh="gripper_1_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
                   <joint name="gripper_1_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-                         range="0 0.698" damping="0.5" frictionloss="1.0"/>
+                         range="0 0.698" damping="5" frictionloss="1.0"/>
                 </body>
 
                 <!-- gripper_2_link -->
@@ -96,7 +96,7 @@
                   <geom type="mesh" mesh="gripper_2_link_mesh" pos="0 0 0" group="4" material="White" class="obj_visual"/>
                   <geom type="mesh" mesh="gripper_2_link_mesh" pos="0 0 0" group="1" contype="1" conaffinity="1" solref="0.02 1" solimp="0.9 0.95 0.001"/>
                   <joint name="gripper_2_joint" type="hinge" pos="0 0 0" axis="0 0 1"
-                         range="0 0.698" damping="0.5" frictionloss="1.0"/>
+                         range="0 0.698" damping="5" frictionloss="1.0"/>
                 </body>
 
                 <!-- gripper center fixed link -->

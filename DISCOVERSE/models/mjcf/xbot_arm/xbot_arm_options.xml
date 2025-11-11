@@ -20,8 +20,6 @@
   <option gravity="0 0 -9.81" /> <!-- 重力设置 -->
   <!-- <option collision="all" /> 碰撞检测设置 -->
   
-
-
   <!-- 默认参数 -->
   <default>
     <!-- 默认几何参数 -->

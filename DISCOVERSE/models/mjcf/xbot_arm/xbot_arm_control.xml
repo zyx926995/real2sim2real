@@ -1,11 +1,18 @@
+
 <mujocoinclude>
   <!-- 臂关节执行器配置 -->
-  <position name="joint1" ctrllimited="true" ctrlrange="-2.094 2.094" joint="arm_1_joint" kp="1000" user="1" forcelimited="true" forcerange="-100 100"/>
-  <position name="joint2" ctrllimited="true" ctrlrange="-2.094 1.5708" joint="arm_2_joint" kp="1000" user="1" forcelimited="true" forcerange="-100 100"/>
-  <position name="joint3" ctrllimited="true" ctrlrange="-2.793 2.793" joint="arm_3_joint" kp="1000" user="1" forcelimited="true" forcerange="-100 100"/>
-  <position name="joint4" ctrllimited="true" ctrlrange="-1.92 1.92" joint="arm_4_joint" kp="350" user="1" forcelimited="true" forcerange="-50 50"/>
-  <position name="joint5" ctrllimited="true" ctrlrange="-2.793 2.793" joint="arm_5_joint" kp="350" user="1" forcelimited="true" forcerange="-50 50"/>
-  <position name="joint6" ctrllimited="true" ctrlrange="-1.57 1.57" joint="arm_6_joint" kp="100" user="1" forcelimited="true" forcerange="-30 30"/>
-  <position name="gripper" tendon='gripper_gear' ctrllimited="true" ctrlrange="0.0 0.698" kp="100" user="1" forcelimited="true" forcerange="-10 10"/>
+  <!-- !! 大幅降低前三个关节的 kp 值 !! -->
+  <position name="joint1" ctrllimited="true" ctrlrange="-2.094 2.094" joint="arm_1_joint" kp="8" user="1" forcelimited="true" forcerange="-100 100"/>
+  <position name="joint2" ctrllimited="true" ctrlrange="-2.094 1.5708" joint="arm_2_joint" kp="8" user="1" forcelimited="true" forcerange="-100 100"/>
+  <position name="joint3" ctrllimited="true" ctrlrange="-2.793 2.793" joint="arm_3_joint" kp="8" user="1" forcelimited="true" forcerange="-100 100"/>
+  
+  <!-- 稍微降低 wrist 关节的 kp 值，保持一致性 -->
+  <position name="joint4" ctrllimited="true" ctrlrange="-1.92 1.92" joint="arm_4_joint" kp="8" user="1" forcelimited="true" forcerange="-50 50"/>
+  <position name="joint5" ctrllimited="true" ctrlrange="-2.793 2.793" joint="arm_5_joint" kp="8" user="1" forcelimited="true" forcerange="-50 50"/>
+  <position name="joint6" ctrllimited="true" ctrlrange="-1.57 1.57" joint="arm_6_joint" kp="8" user="1" forcelimited="true" forcerange="-30 30"/>
+  
+  <!-- 夹爪的 kp 值通常可以保持原样或适当减小 -->
+  <position name="gripper" tendon='gripper_gear' ctrllimited="true" ctrlrange="0.0 0.698" kp="3" user="1" forcelimited="true" forcerange="-10 10"/>
   
 </mujocoinclude>
+

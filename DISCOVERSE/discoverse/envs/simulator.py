@@ -714,9 +714,28 @@ class SimulatorBase:
 
     def step(self, action=None): # 主要的仿真步进函数
         for _ in range(self.decimation):
-            self.updateControl(action)
-            mujoco.mj_step(self.mj_model, self.mj_data)
+            try:
+                # # 记录模拟前的状态
+                # print(f"[DEBUG] 模拟前 QPOS: {self.mj_data.qpos}")
+                # print(f"[DEBUG] 模拟前 QVEL: {self.mj_data.qvel}")
+                # print(f"[DEBUG] 模拟前 QACC: {self.mj_data.qacc}")
+                
+                self.updateControl(action)
+                mujoco.mj_step(self.mj_model, self.mj_data)
+                
+                # 检查异常值
+                if np.any(np.isnan(self.mj_data.qpos)) or np.any(np.isinf(self.mj_data.qpos)):
+                    print(f"[ERROR] 发现 NaN/Inf 在 QPOS!")
+                    print(f"  QPOS: {self.mj_data.qpos}")
+                    print(f"  QVEL: {self.mj_data.qvel}")
+                    print(f"  QACC: {self.mj_data.qacc}")
+                    print(f"  Contact forces: {self.mj_data.cfrc_ext}")
+                    raise RuntimeError("模拟不稳定")
 
+            except Exception as e:
+                print(f"[ERROR] {e}")
+                raise
+            
         terminated = self.checkTerminated()
         if terminated:
             self.resetState()
